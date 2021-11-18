@@ -9,6 +9,7 @@ declare var $:any;
   styleUrls: ['./admin-layout.component.css']
 })
 export class AdminLayoutComponent implements OnInit {
+  showFiller = false;
   isLoggedIn = false
   role: string = ''
   accountSocial: any

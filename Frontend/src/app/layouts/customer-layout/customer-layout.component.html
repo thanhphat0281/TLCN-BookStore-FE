@@ -483,14 +483,14 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6 text-left header-address">
                         <i class="fa fa-map-marker"></i> Võ Văn Ngân, Thủ Đức, TP. Hồ Chí Minh <i class="fa fa-mobile">
-                        </i> 0327800672 </div>
+                        </i> 0329222293 </div>
                     <div class="col-xs-12 col-sm-6 col-md-6 text-right header-quick-links"  >
                         <ul id="menu" class="nav  nav-pills nav-stacked" style="text-align: right !important;" >
                             <a type="button" *ngIf="isLoggedIn" (click)="moveToProfile();" class="btn btn-link" >Tài Khoản</a>
                             <a type="button" *ngIf="!isLoggedIn" class="btn btn-link">Cửa Hàng</a>
                             <a type="button" *ngIf="!isLoggedIn" (click)="moveToAccount();" class="btn btn-link" >Đăng Nhập / Đăng Ký</a>
-                            <button id="username" *ngIf="isLoggedIn" style="background-color: transparent;border-color:
-                                     transparent;color: green;" disabled>Chào {{accountSocial.username}}
+                            <button id="username" *ngIf="isLoggedIn"  style="background-color: transparent;border-color:
+                                     transparent;color: green;"   disabled>Chào {{accountSocial.username}}
                                      <img style="margin-left:10px;width: 30px;height: 30px;" src="{{accountSocial.imageUrl}}" id="imageAccountSocial" />
                             </button>
                             <a id="logout" *ngIf="isLoggedIn" (click)="logout();" class="btn btn-link" type="button">Đăng Xuất</a>
@@ -603,7 +603,7 @@
                                                 </div>
                                             </div>
                                            
-                                            <!-- <div class="wpb_column vc_column_container vc_col-sm-4">
+                                            <!-- <div class="wpb_column vc_column_container vc_col-sm-6">
                                                 <div class="vc_column-inner vc_custom_1454743993099">
                                                     <div class="wpb_wrapper">
                                                         <h3 style="text-align: left" class="vc_custom_heading">Khác</h3>
@@ -619,7 +619,7 @@
                                                     </div>
                                                 </div>
                                             </div> -->
-                                            <!-- <div class="wpb_column vc_column_container vc_col-sm-4">
+                                            <!-- <div class="wpb_column vc_column_container vc_col-sm-6">
                                                 <div class="vc_column-inner ">
                                                     <div class="wpb_wrapper">
                                                         <div class=''>
@@ -655,7 +655,8 @@
                                                             <div class="widget widget_nav_menu">
                                                                 <div class="menu-novel-container">
                                                                     <ul id="menu-novel" class="menu">
-                                                                        <li style="cursor: pointer;" id="menu-item-120" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-120" *ngFor="let authors of authorService.authors"><a (click)=goToAuthor(authors._id)>{{authors.nameAuthor}}</a></li>
+                                                                        <li style="cursor: pointer;" id="menu-item-120" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-120" *ngFor="let authors of authorService.authors |
+                                                                        paginate: { id:'2',itemsPerPage: 8,currentPage: p }"><a (click)=goToAuthor(authors._id)>{{authors.nameAuthor}}</a></li>
 
                                                                     </ul>
                                                                 </div>
@@ -717,8 +718,13 @@
                             <span class="inputicon">
                                 <i class="fa fa-search"  aria-hidden="true" style="font-size: 16px;"></i>
                             </span>
+                            
+                            
+                            
                             <input class="searchHeader" placeholder="Tìm kiếm trên Book Store" type="text" (change)="getInputSearch($event)">
+                           
                             <a class="buttonSearch" type="button" (click)="Search()">Tìm Kiếm</a>
+                            
                         </div>
                         <!-- <li id="menu-item-29" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29 vc-menu-item vc-d-0 vc-mm-layout-full"><a href="../../shop/index.html" class="nav-link"><span class="vc-label">Cửa Hàng</span></a></li>
                         <li id="menu-item-151" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-151 vc-menu-item vc-d-0 vc-mm-layout-full"><a href="#" class="nav-link"><span class="vc-label">Liên Hệ</span></a>
@@ -758,12 +764,12 @@
                                     </ul>
                                     <ul class='bks_icon_list '>
                                         <li><em style='color:#27ae61;' class='fa fa-phone'></em>
-                                            <div class='list_content' style="padding-bottom:10px;margin-top:-10px;">Phone: 0327800672</div>
+                                            <div class='list_content' style="padding-bottom:10px;margin-top:-10px;">Phone: 0329222293</div>
                                         </li>
                                     </ul>
                                     <ul class='bks_icon_list '>
                                         <li><em style='color:#27ae61;' class='fa fa-envelope'></em>
-                                            <div class='list_content'>Email: dibangbansach@gmail.com
+                                            <div class='list_content'>Email: bookstoreute@gmail.com
                                             </div>
                                         </li>
                                     </ul>
@@ -831,7 +837,7 @@
                         <!-- //COPYRIGHTS -->
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="col-md-12 copyright">
-                                <small>Phạm Dĩ Bằng - Trần Thành Phát 2020 BookStore MEAN STACK</small>
+                                <small>Long Hồ - Trần Thành Phát 2021 BookStore MEAN STACK</small>
                             </div>
                         </div>
                         <!-- Footer Right Content -->
@@ -848,7 +854,7 @@
 
     </div>
     <!-- modal add book -->
-    <!-- <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 1041;">
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 1041;">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header border-bottom-0">
@@ -887,6 +893,6 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
 </body>

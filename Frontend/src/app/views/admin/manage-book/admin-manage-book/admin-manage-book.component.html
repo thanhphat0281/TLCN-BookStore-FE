@@ -19,15 +19,15 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header card-header-primary">
-                                    <h3 class="card-title ">Quản lý sách</h3>
-                                    <button type="button" class="btn btn-success" style="float: right;font-size: 13px;" (click)="addBook();">Thêm Sách&nbsp;&nbsp;&nbsp;<span  style="float: right;"><i class="fa fa-plus"></i></span></button>
+                                    <h3 class="card-title  " style="font-size: 26px;">Quản lý sách</h3>
+                                    <button type="button" class="btn btn-blue" style="float: right;font-size: 13px;" (click)="addBook();">Thêm Sách&nbsp;&nbsp;&nbsp;<span  style="float: right;"><i class="fa fa-plus"></i></span></button>
                                     <!-- <a ><span><i class="fa fa-plus"></i></span></a>  -->
                                     <!-- <p *ngIf="alertSuccess" style="color: yellow;font-size: 18px;text-align: center;">{{alertMessage}}</p> -->
 
                                 </div>
                                 <div class="card-body" style="font-size: 14px;">
                                     <div class="table-responsive">
-                                        <mat-form-field style="float: right;width: 100%;">
+                                        <mat-form-field style="float: left;width: 50%;">
                                         <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Tìm kiếm">
                                         </mat-form-field>
                                         <div class="mat-elevation-z8">
@@ -87,7 +87,7 @@
                                                 </tr>
                                             </table>
 
-                                            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]">
+                                            <mat-paginator [pageSizeOptions]="[5,10, 25, 100]">
                                             </mat-paginator>
                                         </div>
                                     </div>

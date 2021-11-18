@@ -2927,15 +2927,15 @@ fieldset:disabled a.btn {
 
 .btn-success {
   color: #ffffff;
-  background-color: #4caf50;
-  border-color: #4caf50;
+  background-color: #0984e3;
+  border-color: #0984e3;
   box-shadow: none;
 }
 
 .btn-success:hover {
   color: #ffffff;
-  background-color: #409444;
-  border-color: #3d8b40;
+  background-color: #769440;
+  border-color: #769440;
 }
 
 .btn-success:focus,
@@ -15552,8 +15552,9 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 .main-panel {
   position: relative;
   float: right;
-  width: calc(100% - 260px);
-  transition: 0.33s, cubic-bezier(0.685, 0.0473, 0.346, 1);
+  z-index: 0;
+  width: calc(100% - 270px);
+  transition: 0s, cubic-bezier(0.685, 0.0473, 0.346, 1);
 }
 
 .main-panel>.content {
@@ -17504,7 +17505,7 @@ html[dir="rtl"] .form-check .form-check-sign .check:before {
 .card.bg-primary,
 .card.card-rotate.bg-primary .front,
 .card.card-rotate.bg-primary .back {
-  background: linear-gradient(60deg, #ab47bc, #8e24aa);
+  background: linear-gradient(60deg, #517fa5, #559e88);
 }
 
 .card .card-header-info .card-icon,
@@ -19739,5 +19740,10 @@ Copyright (c) 2015 Daniel Eden
     display: none !important;
   }
 }
-
+.btn-blue {
+  background-color: #0984e3;
+}
+.btn-blue:hover {
+  background-color: #3742fa;
+}
 /*# sourceMappingURL=dashboard-free.css.map */

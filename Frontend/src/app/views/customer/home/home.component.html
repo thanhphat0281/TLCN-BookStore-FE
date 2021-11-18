@@ -287,6 +287,7 @@
     .slick-dots li.slick-active button:before,
     .product-wrap span.price {
         color: red!important;
+        text-decoration-line: none!important;
     }
 
     ul.post-categories li a:after {
@@ -556,20 +557,20 @@
             <div class="vc_general vc_tta vc_tta-tabs vc_tta-color-grey vc_tta-style-classic vc_tta-shape-rounded
    vc_tta-spacing-1 vc_tta-tabs-position-top vc_tta-controls-align-left">
 
-                <div class='bks-heading '>
+                <!-- <div class='bks-heading '>
                     <h3 class='bks-title'>
                         <span style='font-size:18px;color:#333333;line-height:21px'>Một vài mẫu sách được người dùng ưa thích</span>
                     </h3>
-                </div>
+                </div> -->
                 <div class="col-md-12 text-center">
                 </div>
                 <div style="text-align:center">
 
-                    <div>
+                    <!-- <div>
                         <span style='font-size:18px;color:#333333;line-height:21px'> Sách Mới</span>
-                    </div>
-                    <owl-carousel-o [options]="customOptions">
-                        <ng-template *ngFor="let book of  bookService.book" carouselSlide>
+                    </div> -->
+                    <!-- <owl-carousel-o [options]="customOptions">
+                        <ng-template *ngFor="let item of  top3New" carouselSlide>
                             <div class="item">
                                 <div class="media media-card">
 
@@ -579,16 +580,14 @@
                                         product_cat-creative-thinking product_cat-personal-finance product_cat-romance last
                                          instock sale featured shipping-taxable purchasable product-type-simple">
                                         <div class="product-wrap">
-                                            <span *ngIf="book.sale!=0" class="on-sale">-{{book.sale}}%</span>
+                                            <span *ngIf="item.sale!=0" class="on-sale">-{{item.sale}}%</span>
                                             <div class="product-image">
                                                 <div class="catalog-image">
-                                                    <button (click)="detailBook(book);" style="background-color: transparent;border-color: transparent;">
-                                                       <img src="{{book.imgBook}}"
+                                                    <button (click)="detailBook(item);" style="background-color: transparent;border-color: transparent;">
+                                                       <img src="{{item.imgBook}}"
                                                         class="attachment-bookstore_product_thumb size-bookstore_product_thumb wp-post-image"
                                                          alt="book6" sizes="(max-width: 207px) 100vw, 207px" />
-                                                            <div class="button yith-wcqv-button" data-product_id="78">
-                                                            <i class="fa fa-search"></i>
-                                                       </div>
+                                                           
                                                                </button>
                                                 </div>
 
@@ -601,23 +600,23 @@
 
                                                     <div class="yith-wcwl-add-to-wishlist add-to-wishlist-78">
                                                         <a rel="nofollow" data-product-id="78" data-product-type="simple" style="cursor:pointer; background: #008080 !important;" (click)="favoriteBook(book._id)">
-                                                            <i *ngIf="!validateFavorite(book._id)" class="fa fa-heart" style="color:#FFF;margin-top: 20px;"></i>
-                                                            <i *ngIf="validateFavorite(book._id)" class="fa fa-heart" style="color: yellow;margin-top: 20px;"></i> </a>
+                                                            <i *ngIf="!validateFavorite(item._id)" class="fa fa-heart" style="color:#FFF;margin-top: 20px;"></i>
+                                                            <i *ngIf="validateFavorite(item._id)" class="fa fa-heart" style="color: #ff6b6b;margin-top: 20px;"></i> </a>
                                                     </div>
 
                                                 </div>
                                             </div>
 
 
-                                            <div *ngIf="book.sale!=0" class="product-content">
+                                            <div *ngIf="item.sale!=0" class="product-content">
                                                 <h4 class="product_title">
-                                                    <div id="OverFlowNameBook" href="bookDetail">{{book.nameBook}}</div>
+                                                    <div id="OverFlowNameBook" href="bookDetail">{{item.nameBook}}</div>
                                                 </h4>
-                                                <span *ngIf="(book.rate.average/0.5)%2==0">
+                                                <span *ngIf="(item.rate.average/0.5)%2==0">
                                                     <span *ngFor="let i of [].constructor(5-(5-(item.rate.average)))" class="float-right"><i class="text-warning fa fa-star"></i></span>
                                                 <span *ngFor="let i of [].constructor(5-(item.rate.average))" class="float-right"><i class="text-warning fa fa-star-o"></i></span>
                                                 </span>
-                                                <span *ngIf="(book.rate.average/0.5)%2==1">
+                                                <span *ngIf="(item.rate.average/0.5)%2==1">
                                                     <span *ngFor="let i of [].constructor(item.rate.average-0.5)" class="float-right"><i class="text-warning fa fa-star"></i></span>
                                                 <span *ngFor="let i of [].constructor((item.rate.average/0.5)%2)" class="float-right"><i class="text-warning fa fa-star-half-o"></i></span>
                                                 <span *ngFor="let i of [].constructor(5-(item.rate.average-0.5+1))" class="float-right"><i class="text-warning fa fa-star-o"></i></span>
@@ -625,26 +624,26 @@
                                                 <span class="price">
                                                         <ins>
                                                             <span class="woocommerce-Price-amount amount">
-                                                                {{book.priceBook*(100-book.sale)/100 | currency:"VND"}}
+                                                                {{item.priceBook*(100-item.sale)/100 | currency:"VND"}}
                                                     </span>
                                                 </ins>
                                                 <del style="font-size: 12px">
                                                         <span class="woocommerce-Price-amount amount" >
-                                                            {{book.priceBook | currency:"VND"}}
+                                                            {{item.priceBook | currency:"VND"}}
                                                     </span>
                                                     </del>
                                                 </span>
                                             </div>
                                         
-                                            <div *ngIf="book.sale==0" class="product-content">
+                                            <div *ngIf="item.sale==0" class="product-content">
                                                 <h4 class="product_title">
-                                                    <div id="OverFlowNameBook" href="bookDetail">{{book.nameBook}}</div>
+                                                    <div id="OverFlowNameBook" href="bookDetail">{{item.nameBook}}</div>
                                                 </h4>
-                                                <span *ngIf="(book.rate.average/0.5)%2==0">
+                                                <span *ngIf="(item.rate.average/0.5)%2==0">
                                                     <span *ngFor="let i of [].constructor(5-(5-(item.rate.average)))" class="float-right"><i class="text-warning fa fa-star"></i></span>
                                                 <span *ngFor="let i of [].constructor(5-(item.rate.average))" class="float-right"><i class="text-warning fa fa-star-o"></i></span>
                                                 </span>
-                                                <span *ngIf="(book.rate.average/0.5)%2==1">
+                                                <span *ngIf="(item.rate.average/0.5)%2==1">
                                                     <span *ngFor="let i of [].constructor(item.rate.average-0.5)" class="float-right"><i class="text-warning fa fa-star"></i></span>
                                                 <span *ngFor="let i of [].constructor((item.rate.average/0.5)%2)" class="float-right"><i class="text-warning fa fa-star-half-o"></i></span>
                                                 <span *ngFor="let i of [].constructor(5-(item.rate.average-0.5+1))" class="float-right"><i class="text-warning fa fa-star-o"></i></span>
@@ -652,7 +651,7 @@
                                                 <span class="price">
                                                         <ins>
                                                             <span class="woocommerce-Price-amount amount">
-                                                                {{book.priceBook | currency:"VND"}}
+                                                                {{item.priceBook | currency:"VND"}}
                                                     </span>
                                                 </ins>
                                                 </span>
@@ -666,9 +665,15 @@
                             </div>
                         </ng-template>
 
-                    </owl-carousel-o>
-                    <!-- <div *ngIf="IsRecommend && isLoggedIn" >
+                    </owl-carousel-o> -->
+                    <div *ngIf="IsRecommend && isLoggedIn" >
+                        
                         <div>-------------------------------------------------------------------------------------------</div>
+                        <div class='bks-heading '>
+                            <h3 class='bks-title'>
+                                <span style='font-size:18px;color:#333333;line-height:21px'>Một vài mẫu sách được người dùng ưa thích</span>
+                            </h3>
+                        </div>
                         <div>
                             <span style='font-size:18px;color:#333333;line-height:21px'>Thể Loại {{theloai1}}</span>
                         </div>
@@ -690,9 +695,9 @@
                                                        <img src="{{item.imgBook}}"
                                                         class="attachment-bookstore_product_thumb size-bookstore_product_thumb wp-post-image"
                                                          alt="book6" sizes="(max-width: 207px) 100vw, 207px" />
-                                                            <div class="button yith-wcqv-button" data-product_id="78">
+                                                            <!-- <div class="button yith-wcqv-button" data-product_id="78">
                                                             <i class="fa fa-search"></i>
-                                                       </div>
+                                                       </div> -->
                                                                </button>
                                                     </div>
 
@@ -705,7 +710,7 @@
                                                         <div class="yith-wcwl-add-to-wishlist add-to-wishlist-78">
                                                             <a rel="nofollow" data-product-id="78" data-product-type="simple" style="cursor:pointer; background: #008080 !important" (click)="favoriteBook(item._id)">
                                                                 <i *ngIf="!validateFavorite(item._id)" class="fa fa-heart" style="color:#FFF;margin-top: 20px;"></i>
-                                                                <i *ngIf="validateFavorite(item._id)" class="fa fa-heart" style="color: yellow;margin-top: 20px;"></i> </a>
+                                                                <i *ngIf="validateFavorite(item._id)" class="fa fa-heart" style="color: #ff6b6b;margin-top: 20px;"></i> </a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -794,9 +799,9 @@
                                                        <img src="{{item.imgBook}}"
                                                         class="attachment-bookstore_product_thumb size-bookstore_product_thumb wp-post-image"
                                                          alt="book6" sizes="(max-width: 207px) 100vw, 207px" />
-                                                            <div class="button yith-wcqv-button" data-product_id="78">
+                                                            <!-- <div class="button yith-wcqv-button" data-product_id="78">
                                                             <i class="fa fa-search"></i>
-                                                       </div>
+                                                       </div> -->
                                                                </button>
                                                     </div>
 
@@ -809,7 +814,7 @@
                                                         <div class="yith-wcwl-add-to-wishlist add-to-wishlist-78">
                                                             <a rel="nofollow" data-product-id="78" data-product-type="simple" style="cursor:pointer; background: #008080 !important;" (click)="favoriteBook(item._id)">
                                                                 <i *ngIf="!validateFavorite(item._id)" class="fa fa-heart" style="color:#FFF;margin-top: 20px;"></i>
-                                                                <i *ngIf="validateFavorite(item._id)" class="fa fa-heart" style="color: yellow;margin-top: 20px;"></i> </a>
+                                                                <i *ngIf="validateFavorite(item._id)" class="fa fa-heart" style="color: #ff6b6b;margin-top: 20px;"></i> </a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -877,7 +882,7 @@
                         </owl-carousel-o>
 
                         <div>-------------------------------------------------------------------------------------------</div>
-                    </div> -->
+                    </div>
                     <div *ngIf="IsBuyRecommend && isLoggedIn">
                         <div>
                             <span style='font-size:18px;color:#333333;line-height:21px'>Liên Quan Đến Những Sách Bạn Đã Mua</span>
@@ -915,7 +920,7 @@
                                                         <div class="yith-wcwl-add-to-wishlist add-to-wishlist-78">
                                                             <a rel="nofollow" data-product-id="78" data-product-type="simple" style="cursor:pointer;" (click)="favoriteBook(item._id)">
                                                                 <i *ngIf="!validateFavorite(item._id)" class="fa fa-heart" style="color:#FFF;margin-top: 20px;"></i>
-                                                                <i *ngIf="validateFavorite(item._id)" class="fa fa-heart" style="color: yellow;margin-top: 20px;"></i> </a>
+                                                                <i *ngIf="validateFavorite(item._id)" class="fa fa-heart" style="color: #ff6b6b;margin-top: 20px;"></i> </a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1022,7 +1027,7 @@
                                                         <div class="yith-wcwl-add-to-wishlist add-to-wishlist-78">
                                                             <a rel="nofollow" data-product-id="78" data-product-type="simple" style="cursor:pointer;" (click)="favoriteBook(item._id)">
                                                                 <i *ngIf="!validateFavorite(item._id)" class="fa fa-heart" style="color:#FFF;margin-top: 20px;"></i>
-                                                                <i *ngIf="validateFavorite(item._id)" class="fa fa-heart" style="color: yellow;margin-top: 20px;"></i> </a>
+                                                                <i *ngIf="validateFavorite(item._id)" class="fa fa-heart" style="color: #ff6b6b;margin-top: 20px;"></i> </a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1230,7 +1235,7 @@
             </div>
         </div>
     </div>
-    <!-- <div class="vc_row wpb_row vc_row-fluid vc_custom_1454679052819">
+    <div class="vc_row wpb_row vc_row-fluid vc_custom_1454679052819">
         <div class="page-container">
             <div class="wpb_column vc_column_container vc_col-sm-12">
                 <div class="vc_column-inner ">
@@ -1275,7 +1280,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="wpb_column vc_column_container vc_col-sm-4">
+                            <!-- <div class="wpb_column vc_column_container vc_col-sm-4">
                                 <div class="vc_column-inner ">
                                     <div class="wpb_wrapper">
                                         <div class='bks-heading '>
@@ -1313,8 +1318,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="wpb_column vc_column_container vc_col-sm-4">
+                            </div> -->
+                            <!-- <div class="wpb_column vc_column_container vc_col-sm-4">
                                 <div class="vc_column-inner ">
                                     <div class="wpb_wrapper">
                                         <div class='bks-heading '>
@@ -1351,13 +1356,13 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
     <div class="vc_row wpb_row vc_row-fluid vc_custom_1454597724991 vc_row-has-fill" *ngIf="ListPromotion.length!=0">
         <div class="page-container">
             <div class="wpb_column vc_column_container vc_col-sm-12">
@@ -1553,7 +1558,7 @@
                                         <div class="yith-wcwl-add-to-wishlist add-to-wishlist-78">
                                             <a rel="nofollow" data-product-id="78" data-product-type="simple" style="cursor:pointer;background:#008080 !important;" (click)="favoriteBook(item._id)">
                                                 <i *ngIf="!validateFavorite(item._id)" class="fa fa-heart" style="margin-right: 30px;color:#FFF;margin-top: 20px;"></i>
-                                                <i *ngIf="validateFavorite(item._id)" class="fa fa-heart" style="margin-right: 30px;color: yellow;margin-top: 20px;"></i> </a>
+                                                <i *ngIf="validateFavorite(item._id)" class="fa fa-heart" style="margin-right: 30px;color: #ff6b6b;margin-top: 20px;"></i> </a>
                                         </div>
                                     </div>
                                 </div>
@@ -1597,6 +1602,7 @@
 
                     </div>
                     <div>
+                        <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
                         <pagination-controls (pageChange)="p = $event"></pagination-controls>
                     </div>
                 </div>

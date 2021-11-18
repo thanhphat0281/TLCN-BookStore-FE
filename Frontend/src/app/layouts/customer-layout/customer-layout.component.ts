@@ -332,6 +332,7 @@ export class CustomerLayoutComponent implements OnInit {
 
   //search
   InputSearch = "";
+  
   getInputSearch(event) {
     this.InputSearch = event.target.value;
     console.log(this.InputSearch)

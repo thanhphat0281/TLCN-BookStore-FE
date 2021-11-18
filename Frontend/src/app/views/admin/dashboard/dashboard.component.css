@@ -35,3 +35,7 @@
     pointer-events: none;
     color: #A8A8A8;
 }
+.main-panel[_ngcontent-sfj-c4] {
+    z-index: 0 !important;
+    width: calc(100% - 20px)!important;
+}

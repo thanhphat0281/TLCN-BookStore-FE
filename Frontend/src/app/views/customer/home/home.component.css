@@ -63,6 +63,8 @@
 
 .product-wrap {
     background-color: white !important;
+    margin: 0px 10px;
+    height: 340px;
 }
 
 .test {
@@ -116,17 +118,18 @@
 
 #OverFlowNameBook {
     width: auto;
-    height: 16px;
+    height: 40px;
     overflow: hidden;
     cursor: pointer;
     text-align: center;
     padding: 0px 10px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
+    line-height: 20px;
 }
 
 #OverFlowNameBook:hover {
-    height: auto;
+    /* height: auto; */
     overflow: visible;
     color: #27AE61;
 }

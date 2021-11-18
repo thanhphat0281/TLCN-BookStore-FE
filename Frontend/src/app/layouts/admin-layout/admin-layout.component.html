@@ -1,24 +1,42 @@
-<div class="sidebar" data-color="purple">
-    <div class="logo"><a (click)="moveToDashboard();" class="simple-text logo-normal">
-        BookStore
-        </a></div>
-    <div class="sidebar-wrapper">
-        <ul class="nav">
-            <!-- <li class="nav-item active">
-                <a class="nav-link " type="button" (click)="moveToDashboard();">
-                    <i class="material-icons">dashboard</i>
-                    <p>Màn hình chính</p>
-                </a>
-            </li>  -->
-            <li class="nav-item ">
-                <a class="nav-link" type="button" (click)="moveToManagePage();">
-                    <i class="material-icons">supervised_user_circle</i>
-                    <p>Quản lý</p>
-                </a>
-            </li>
-        </ul>
+<div class="main-all">
+
+
+<mat-drawer-container class="example-container" autosize>
+    <!-- <mat-drawer #drawer class="example-sidenav" mode="side"> -->
+       <!-- <button type="button" mat-button (click)="drawer.toggle()">X</button> -->
+       
+       
+       <div class="sidebar" data-color="purple">
+        
+        <div class="logo"><a (click)="moveToDashboard();" class="simple-text logo-normal">BookStore</a></div>
+        <div class="sidebar-wrapper">
+            <ul class="nav">
+                 <li class="nav-item active">
+                    <a class="nav-link " type="button" (click)="moveToDashboard();">
+                        <i class="material-icons">dashboard</i>
+                        <p>Màn hình chính</p>
+                 </a>
+                </li> 
+                <li class="nav-item ">
+                    <a class="nav-link" type="button" (click)="moveToManagePage();">
+                        <i class="material-icons">supervised_user_circle</i>
+                        <p>Quản lý</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
-</div>
+    <!-- </mat-drawer> -->
+    
+    <div class="touch-bar">
+        <button type="button" mat-button (click)="drawer.toggle()">
+            <mat-icon>horizontal_split</mat-icon>
+        </button>
+        
+      </div>
+    
+  
+  </mat-drawer-container>
 <router-outlet></router-outlet>
 <div class="fixed-plugin">
     <div class="dropdown show-dropdown">
@@ -65,4 +83,5 @@
 
         </ul>
     </div>
+</div>
 </div>

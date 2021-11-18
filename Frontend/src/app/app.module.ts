@@ -23,10 +23,21 @@ import { CustomerLayoutComponent } from './layouts/customer-layout/customer-layo
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { AgmDirectionModule } from 'agm-direction'; 
 import { FileUploadModule } from 'ng2-file-upload';
-import {
-  AgmCoreModule
-} from '@agm/core';
+import {AgmCoreModule} from '@agm/core';
 import { SafePipeModule } from 'safe-pipe';
+//Material
+import {MatIconModule} from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatSliderModule} from '@angular/material/slider';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatSortModule} from '@angular/material/sort';
+import {MatTableModule} from '@angular/material/table';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatTreeModule} from '@angular/material/tree';
+import {OverlayModule} from '@angular/cdk/overlay';
 
 
 let config = new AuthServiceConfig([
@@ -68,11 +79,21 @@ export function provideConfig() {
     Ng2SearchPipeModule,
     ChartsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBQ0quGzcr4DdR5kip1FaZudNOzAGQ0xmc',
+      apiKey: 'AIzaSyDB7j3vAoOC-IjARPSNOUGHUI4qJ9-hM8g',
       libraries: ['places']
     }),
     NgxImageZoomModule,
-    AgmDirectionModule
+    AgmDirectionModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatTreeModule,
+    OverlayModule,
+    MatSidenavModule,
+    MatIconModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true },
   {

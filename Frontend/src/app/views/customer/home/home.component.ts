@@ -63,7 +63,7 @@ export class HomeComponent implements OnInit {
 		this.getTotalCountAndPrice();
 		this.get3Promotion();
 		this.getAllBook();
-		//this.RecommendByUser();
+		this.RecommendByUser();
 		// recommend chỉ chạy 1 lần thôi (để đỡ load nhiều)	(2 trạng thái đăng nhập có sự thay đổi thì mới chạy recommends)
 		if(this.accountSocial!=null){
 			localStorage.setItem("StatusLoginNow","true");

@@ -1521,6 +1521,7 @@ div.product .summary .yith-wcwl-add-to-wishlist, div.product .summary .compare {
 
 .product-buttons .add-to-cart-btn {
     width: 60%;
+    
     float: left;
 }
 .woocommerce .product-wrap .add-to-cart-btn a.button {

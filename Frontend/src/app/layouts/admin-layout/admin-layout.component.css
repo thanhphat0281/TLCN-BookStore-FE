@@ -26,3 +26,30 @@
       transform: translate3d(0, 0, 0) !important; 
       top: 0px ; left: 0px ;
 }
+
+.example-sidenav {
+    position: absolute;
+    width: 255px;
+    height: 100%;
+}
+.main-all {
+    position: relative;
+}
+/* .example-container {
+    z-index: 1;
+} */
+button {
+    border: none !important;
+    line-height: 20px;
+    cursor: pointer;
+    outline:none !important;
+  
+}
+.touch-bar {
+    background-color: #f5f6fa;
+}
+.touch-bar-color {
+    background-color: #f5f6fa;
+    width: 10px;
+    height: 100vh;
+}
